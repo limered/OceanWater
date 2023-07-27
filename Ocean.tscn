@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwaevwtjvfvbm"]
+
+[ext_resource type="ArrayMesh" uid="uid://bd6vli1p1m3dy" path="res://Ocean.tres" id="1_cdmcb"]
+[ext_resource type="Script" path="res://OceanMesh.cs" id="1_pb8o7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awk60"]
+
+[node name="Ocean" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="OceanMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_awk60")
+mesh = ExtResource("1_cdmcb")
+script = ExtResource("1_pb8o7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.745476, 0.485881, -0.456273, 0, 0.684547, 0.728969, 0.666533, 0.543429, -0.510313, -5.984, 41.625, -4.826)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.99998, 0.00438459, 0.0045247, -0.0063006, 0.695886, 0.718124, 0, -0.718139, 0.6959, 0, 9.30664, 0)
