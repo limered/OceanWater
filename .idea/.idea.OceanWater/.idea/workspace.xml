@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2TARbp8pRjBfZ2YIsP0Nrir8q8t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +28,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -73,7 +76,12 @@
       <option name="presentableId" value="Default" />
       <updated>1690483975230</updated>
       <workItem from="1690483975392" duration="135000" />
-      <workItem from="1690484197100" duration="5234000" />
+      <workItem from="1690484197100" duration="5515000" />
+      <workItem from="1690917028371" duration="2188000" />
+      <workItem from="1691086419401" duration="184000" />
+      <workItem from="1691086613190" duration="789000" />
+      <workItem from="1691087411405" duration="5318000" />
+      <workItem from="1691098066271" duration="427000" />
     </task>
     <servers />
   </component>

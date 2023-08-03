@@ -1,21 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwaevwtjvfvbm"]
+[gd_scene load_steps=7 format=3 uid="uid://bwaevwtjvfvbm"]
 
-[ext_resource type="ArrayMesh" uid="uid://bd6vli1p1m3dy" path="res://Ocean.tres" id="1_cdmcb"]
-[ext_resource type="Script" path="res://OceanMesh.cs" id="1_pb8o7"]
+[ext_resource type="Shader" path="res://Ocean.gdshader" id="1_iwsdi"]
+[ext_resource type="Script" path="res://ComputeExample.cs" id="1_y1fb8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awk60"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ev4iu"]
+noise_type = 3
+frequency = 0.1
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x7ok0"]
+width = 4
+height = 4
+noise = SubResource("FastNoiseLite_ev4iu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjc44"]
+render_priority = 0
+shader = ExtResource("1_iwsdi")
+shader_parameter/height_scale = 20.0
+shader_parameter/noise = SubResource("NoiseTexture2D_x7ok0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_efv20"]
+material = SubResource("ShaderMaterial_pjc44")
+size = Vector2(100, 100)
+subdivide_width = 512
+subdivide_depth = 512
 
 [node name="Ocean" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_y1fb8")
 
 [node name="OceanMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_awk60")
-mesh = ExtResource("1_cdmcb")
-script = ExtResource("1_pb8o7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104518, 0, 0)
+gi_mode = 0
+mesh = SubResource("PlaneMesh_efv20")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.745476, 0.485881, -0.456273, 0, 0.684547, 0.728969, 0.666533, 0.543429, -0.510313, -5.984, 41.625, -4.826)
+transform = Transform3D(-0.837268, 0.332521, -0.434065, 0, 0.793838, 0.60813, 0.546793, 0.509167, -0.664655, -35.4938, 11.4337, -46.2707)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.99998, 0.00438459, 0.0045247, -0.0063006, 0.695886, 0.718124, 0, -0.718139, 0.6959, 0, 9.30664, 0)
+transform = Transform3D(1, 0, 0, 0, 0.601118, 0.79916, 0, -0.79916, 0.601118, 0, 1.29805, 0)
