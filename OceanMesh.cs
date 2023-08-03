@@ -31,8 +31,6 @@ public partial class OceanMesh : MeshInstance3D
 			GD.Print("Mesh Loaded");
 			GD.PrintRich(arrayMesh);
 		}
-		
-		ResourceSaver.Save(Mesh, "res://Ocean.tres", ResourceSaver.SaverFlags.Compress);
 	}
 
 	private void GenerateMesh(
