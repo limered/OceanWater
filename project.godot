@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="OceanWater"
 
+[editor]
+
+movie_writer/movie_file="H:/source/game footage/Ocean.avi"
+
 [input]
 
 Forward={
