@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwaevwtjvfvbm"]
+[gd_scene load_steps=8 format=3 uid="uid://bwaevwtjvfvbm"]
 
 [ext_resource type="Shader" path="res://Ocean.gdshader" id="1_iwsdi"]
 [ext_resource type="Script" path="res://ComputeExample.cs" id="1_y1fb8"]
+[ext_resource type="Script" path="res://CameraController.cs" id="3_ywwb8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ev4iu"]
 noise_type = 3
@@ -35,6 +36,7 @@ mesh = SubResource("PlaneMesh_efv20")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.837268, 0.332521, -0.434065, 0, 0.793838, 0.60813, 0.546793, 0.509167, -0.664655, -35.4938, 11.4337, -46.2707)
+script = ExtResource("3_ywwb8")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.601118, 0.79916, 0, -0.79916, 0.601118, 0, 1.29805, 0)

@@ -27,17 +27,17 @@ public partial class ComputeExample : Node
         };
         uniform.AddId(buffer);
         var uniformSet = rd.UniformSetCreate(new Array<RDUniform> { uniform }, shader, 0);
-        
+
         var pipeline = rd.ComputePipelineCreate(shader);
         var computeList = rd.ComputeListBegin();
         rd.ComputeListBindComputePipeline(computeList, pipeline);
         rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
         rd.ComputeListDispatch(computeList, xGroups: 5, yGroups: 1, zGroups: 1);
         rd.ComputeListEnd();
-        
+
         rd.Submit();
         rd.Sync();
-        
+
         // Read back the data from the buffers
         var outputBytes = rd.BufferGetData(buffer);
         var output = new float[input.Length];
