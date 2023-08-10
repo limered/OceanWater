@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWater", "OceanWater.csproj", "{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWater", "OceanWater.csproj", "{05923063-5152-4851-9A20-EF237E44C7BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{DC2C6E65-D8F1-4931-98B6-3AA8523A736C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{05923063-5152-4851-9A20-EF237E44C7BF}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
