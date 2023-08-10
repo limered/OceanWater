@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwaevwtjvfvbm"]
+[gd_scene load_steps=9 format=3 uid="uid://bwaevwtjvfvbm"]
 
 [ext_resource type="Script" path="res://src/ComputeExample.cs" id="1_47wtj"]
 [ext_resource type="Shader" path="res://Ocean.gdshader" id="1_iwsdi"]
+[ext_resource type="Texture2D" uid="uid://n4cuq2aiacel" path="res://test.png" id="2_ruwrv"]
 [ext_resource type="Script" path="res://src/camera/CameraController.cs" id="3_berk5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ev4iu"]
@@ -27,7 +28,9 @@ subdivide_width = 512
 subdivide_depth = 512
 
 [node name="Ocean" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97221, 8.16621, 8.66638)
 script = ExtResource("1_47wtj")
+Texture = ExtResource("2_ruwrv")
 
 [node name="OceanMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23041, 3.07069, -0.904541)
