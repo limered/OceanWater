@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bwaevwtjvfvbm"]
 
+[ext_resource type="Script" path="res://src/ComputeExample.cs" id="1_47wtj"]
 [ext_resource type="Shader" path="res://Ocean.gdshader" id="1_iwsdi"]
-[ext_resource type="Script" path="res://ComputeExample.cs" id="1_y1fb8"]
-[ext_resource type="Script" path="res://CameraController.cs" id="3_ywwb8"]
+[ext_resource type="Script" path="res://src/camera/CameraController.cs" id="3_berk5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ev4iu"]
 noise_type = 3
@@ -27,7 +27,7 @@ subdivide_width = 512
 subdivide_depth = 512
 
 [node name="Ocean" type="Node3D"]
-script = ExtResource("1_y1fb8")
+script = ExtResource("1_47wtj")
 
 [node name="OceanMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23041, 3.07069, -0.904541)
@@ -36,7 +36,7 @@ mesh = SubResource("PlaneMesh_efv20")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.837268, 0.332521, -0.434065, 0, 0.793838, 0.60813, 0.546793, 0.509167, -0.664655, -35.4938, 11.4337, -46.2707)
-script = ExtResource("3_ywwb8")
+script = ExtResource("3_berk5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.601118, 0.79916, 0, -0.79916, 0.601118, 0, 1.29805, 0)
