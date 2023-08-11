@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
@@ -29,8 +30,19 @@ public abstract class ComputeBase<TOutput> : ICompute<TOutput>
 		_uniforms.Add(uniform);
 		return this;
 	}
+	public ICompute<TOutput> AddUintUniform(uint[] i, int binding)
+	{
+		var theInt = new byte[sizeof(uint)];
+		Buffer.BlockCopy(i, 0, theInt, 0, 1);
+		var bufferRid = Rd.StorageBufferCreate((uint)theInt.Length, theInt);
+		Buffers.Add(binding, bufferRid);
 
-	public ICompute<TOutput> AddImageUniform(
+		var uniform = CreateUniform(RenderingDevice.UniformType.StorageBuffer, binding, bufferRid);
+		_uniforms.Add(uniform);
+		return this;
+	}
+
+	public ICompute<TOutput> AddSamplerTextureUniform(
 		Texture2D tex,
 		RenderingDevice.TextureUsageBits usageBits,
 		RenderingDevice.DataFormat format,
@@ -58,6 +70,29 @@ public abstract class ComputeBase<TOutput> : ICompute<TOutput>
 
 		return this;
 	}
+	
+	public ICompute<TOutput> AddImageUniform(
+		Image image, 
+		RenderingDevice.TextureUsageBits usage, 
+		RenderingDevice.DataFormat format, 
+		int binding)
+	{
+		var fmt = new RDTextureFormat
+		{
+			Width = (uint)image.GetWidth(),
+			Height = (uint)image.GetHeight(),
+			UsageBits = usage,
+			Format = format,
+		};
+
+		var textureRid = Rd.TextureCreate(fmt, new RDTextureView(), new Array<byte[]> { image.GetData() });
+		Buffers.Add(binding, textureRid);
+
+		var uniform = CreateUniform(RenderingDevice.UniformType.Image, binding, textureRid);
+		_uniforms.Add(uniform);
+
+		return this;
+	}
 
 	public ICompute<TOutput> GeneratePipeline(uint xGroups = 1, uint yGroups = 1, uint zGroups = 1)
 	{
@@ -78,6 +113,8 @@ public abstract class ComputeBase<TOutput> : ICompute<TOutput>
 	}
 
 	public abstract TOutput ReadBack(int binding);
+
+
 
 	private static RDUniform CreateUniform(
 		RenderingDevice.UniformType uniformType,

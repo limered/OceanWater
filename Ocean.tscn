@@ -1,41 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwaevwtjvfvbm"]
+[gd_scene load_steps=5 format=3 uid="uid://bwaevwtjvfvbm"]
 
-[ext_resource type="Script" path="res://src/ComputeExample.cs" id="1_47wtj"]
-[ext_resource type="Shader" path="res://Ocean.gdshader" id="1_iwsdi"]
-[ext_resource type="Texture2D" uid="uid://n4cuq2aiacel" path="res://test.png" id="2_ruwrv"]
 [ext_resource type="Script" path="res://src/camera/CameraController.cs" id="3_berk5"]
+[ext_resource type="Script" path="res://src/OceanMesh.cs" id="3_j02e5"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ev4iu"]
-noise_type = 3
-frequency = 0.1
-fractal_octaves = 4
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x7ok0"]
-width = 4
-height = 4
-noise = SubResource("FastNoiseLite_ev4iu")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjc44"]
-render_priority = 0
-shader = ExtResource("1_iwsdi")
-shader_parameter/height_scale = 20.0
-shader_parameter/noise = SubResource("NoiseTexture2D_x7ok0")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bih8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_efv20"]
-material = SubResource("ShaderMaterial_pjc44")
-size = Vector2(100, 100)
-subdivide_width = 512
-subdivide_depth = 512
+material = SubResource("StandardMaterial3D_6bih8")
+size = Vector2(5, 256)
+subdivide_width = 256
+subdivide_depth = 256
 
 [node name="Ocean" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97221, 8.16621, 8.66638)
-script = ExtResource("1_47wtj")
-Texture = ExtResource("2_ruwrv")
 
 [node name="OceanMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23041, 3.07069, -0.904541)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_efv20")
+script = ExtResource("3_j02e5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.837268, 0.332521, -0.434065, 0, 0.793838, 0.60813, 0.546793, 0.509167, -0.664655, -35.4938, 11.4337, -46.2707)
