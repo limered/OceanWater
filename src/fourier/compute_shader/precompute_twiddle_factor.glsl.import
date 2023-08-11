@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cwd82do83i2lu"
+path="res://.godot/imported/precompute_twiddle_factor.glsl-686d2e0d5816e96e3cbf19866fd04548.res"
+
+[deps]
+
+source_file="res://src/fourier/compute_shader/precompute_twiddle_factor.glsl"
+dest_files=["res://.godot/imported/precompute_twiddle_factor.glsl-686d2e0d5816e96e3cbf19866fd04548.res"]
+
+[params]
+

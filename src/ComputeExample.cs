@@ -16,7 +16,7 @@ public partial class ComputeExample : Node
         var cs = new ExampleComputeShader()
             .FromFile("res://compute_shader/compute_example.glsl")
             .AddBufferUniform(inputBytes, 0)
-            .AddImageUniform(
+            .AddSamplerTextureUniform(
                 Texture,
                 RenderingDevice.TextureUsageBits.CanUpdateBit | RenderingDevice.TextureUsageBits.SamplingBit,
                 RenderingDevice.DataFormat.R8G8B8A8Srgb,
