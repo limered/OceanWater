@@ -15,6 +15,7 @@ public partial class OceanMesh : MeshInstance3D
         var logSize = (int)Mathf.Log(size);
         GD.Print("logSize: ", logSize, " size: ", size);
         var image = Image.Create(logSize, size, false, Image.Format.Rgbaf);
+        
         var cs = new PrecomputeTwiddleFactorCompute(logSize, size)
             .FromFile("res://src/fourier/compute_shader/precompute_twiddle_factor.glsl")
             .AddImageUniform(
@@ -29,6 +30,7 @@ public partial class OceanMesh : MeshInstance3D
             .Run();
 
         var result = cs.ReadBack(0);
+        
         var mat = new StandardMaterial3D();
         mat.TextureFilter = BaseMaterial3D.TextureFilterEnum.Nearest;
         mat.TextureRepeat = true;

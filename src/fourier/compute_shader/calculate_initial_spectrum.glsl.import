@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://b4bfcfuss3wct"
+path="res://.godot/imported/calculate_initial_spectrum.glsl-d09200d583a341f3f8d13c64a474ecad.res"
+
+[deps]
+
+source_file="res://src/fourier/compute_shader/calculate_initial_spectrum.glsl"
+dest_files=["res://.godot/imported/calculate_initial_spectrum.glsl-d09200d583a341f3f8d13c64a474ecad.res"]
+
+[params]
+
